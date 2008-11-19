@@ -61,27 +61,6 @@
     Finally, point your web server (nginx, apache, or whatever you like) to proxy requests made to your
     integrity domain to the previous configuration. 
 
-  %p
-    For example, the nginx config running behind 
-    %a{ :href => "http://builder.integrityapp.com" } http://builder.integrityapp.com
-    is:
-  
-  %code.nginx
-    %pre
-      :preserve
-        upstream builder-integrityapp-com {
-          server 127.0.0.1:8910;
-          server 127.0.0.1:8911;
-        }
-      
-        server {
-          server_name builder.integrityapp.com;
-          root /var/www/integrity/public;
-          location / {
-            proxy_pass http://builder-integrityapp-com;
-          }
-        }
-  
   %p 
     After reloading your webserver's config, you should be gold. Just browse to your
     new Integrity install and add your first project!
@@ -91,6 +70,22 @@
     = succeed "." do
       %a{ :href => "/configure" } configuring integrity
 
+#itworks
+  %h1
+    %span 
+      But does it work with
+      = surround "<", ">?" do
+        %em insert tech here
+  
+  %p
+    Short answer:
+    %strong Yeah!
+  
+  %p
+    Slightly longer answer: as long as your build process can be run from an unix-y 
+    environment <strong>and</strong> it returns a <em>zero</em> status code for
+    success and <em>non-zero</em> for failure, then integrity works for you.
+
 #suport
   %h1
     %span Support / Development
@@ -99,6 +94,11 @@
     You can get in touch via irc at
     %a{ :href => "irc://irc.freenode.net:6667/integrity" } #integrity
     on freenode.
+
+  %p 
+    If no one happens to be around the IRC channel, you can ask in our
+    = succeed "." do
+      %a{ :href => "http://groups.google.com/group/integrityapp" } Google Group
   
   %p
     If you find a bug, or want to give us a feature request, drop by our
