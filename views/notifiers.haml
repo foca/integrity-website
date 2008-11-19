@@ -5,7 +5,7 @@
   %p
     After a build is finished, you want to know the status
     = succeed "." do
-      %strong immidiately
+      %strong immediately
 
     Integrity gives you a modular notification's system for this.
   
@@ -45,7 +45,8 @@
   %code.shell
     %pre
       :preserve
-        $ sudo gem install integrity-email
+        $ sudo gem sources -a http://gems.github.com
+        $ sudo gem install foca-integrity-email
   
   %p
     And then edit the <code>config.ru</code> file in your integrity install directory:
