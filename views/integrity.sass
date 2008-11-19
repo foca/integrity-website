@@ -1,0 +1,175 @@
+!default_fonts   = "Helvetica Neue, Helvetica, Arial, sans-serif"
+!nice_fonts      = "Georgia, Times New Roman, serif"
+!monospace_fonts = "Monaco, Deja Vu Sans Mono, Inconsolata, Consolas, monospace"
+
+!page_bg       = #e0e0e0
+!content_bg    = #eee
+!header_bg     = #fff
+!text_color    = #333
+!title_color   = #4e4e4e
+!link_color    = #ed1556
+!link_bg       = #fff
+!rule_color    = #c0c0c0
+!watermark     = #ccc
+!quote_bg      = #FFF
+!success_bg    = #bbf8aa
+!success_color = #337022
+!failed_bg     = #fba
+!failed_color  = #f10
+
+!code_bg       = #181818
+!code_color    = #eee
+
+html
+  :background-color = !page_bg
+
+body
+  :font-size 100%
+  :font-family = !default_fonts
+  :color = !text_color
+
+a
+  :color = !link_color
+  :text-decoration none
+  &:hover
+    :color = !link_bg
+    :background-color = !link_color
+
+#header, #nav, #content, #footer
+  :width 40em
+  :margin 0 auto
+  :background = !content_bg
+  :padding 0 1em 1em
+  :z-index 0
+  :position relative
+  :font-size 1em
+
+#header
+  :position relative
+  :background = !header_bg
+  h1, h2
+    :font
+      :weight bold
+      :family = !nice_fonts
+  h1
+    :font-size 4em
+    :padding-top .1em
+    a:hover
+      :background = !header_bg
+      :color = !link_color - #222
+  h2
+    :position absolute
+    :top 1.9em
+    :left 20em
+    :width 18em
+    :line-height 1.2
+    :color #a0a0a0
+    strong
+      :font-weight bold
+      :color = !link_color
+
+#nav
+  :height 2.2em
+  :margin
+    :top 2px
+    :bottom 2px
+  :padding 0 1em
+  :background = !header_bg - #080808
+  
+  li
+    :float right
+    a
+      :display block
+      :padding .5em
+      :margin-left .5em
+
+#content
+  :padding-top 1em
+  :padding-bottom 2em
+  :line-height 1.4
+
+  strong
+    :font-weight bold
+  em
+    :font-style italic  
+
+  h1, h2, h3, h4, h5, h6
+    :color = !title_color
+  h1
+    :position relative
+    :width 100%
+    :z-index 1000
+    :font-size 2em
+    :font-weight bold
+    :margin
+      :top .5em
+      :bottom .75em
+    :line-height 1.2
+    :text-align right
+    :border-bottom = 1px solid !rule_color
+    span
+      :position relative
+      :top .25em
+      :padding 0 .25em
+      :margin-right .25em
+      :background = !rule_color
+  h2
+    :font-weight bold
+    :font-size 1.5em
+    :margin 1em 0 .2em
+  h3
+    :font-weight bold
+    :font-size 1.25em
+    :margin .25em 0
+  h4, h5, h6
+    :font-weight bold
+    :margin-top .5em
+
+  code, pre, textarea, input
+    :font-family = !monospace_fonts
+  pre
+    :display blog
+    :margin .5em 0
+    :padding 1em
+    :border = 1px solid !rule_color
+    :background = !code_bg
+    :color = !code_color
+
+  p
+    :margin .6em 0
+    
+  cite
+    :font-size .8em
+
+  p.more
+    :text-align right
+    :font-size .8em
+  
+  #notifiers 
+    ul
+      :margin-left 1em
+    li
+      :list-style-type disc
+      :margin-left 2em
+
+#footer
+  :height 1.2em
+  :padding 1.5em 1.25em
+  :border-top 1px solid #ccc 
+  :font-size .8em
+  :width 50em !important
+  :color #666
+  :text-align right
+  strong
+    :font-weight bold
+  
+  .credits
+    :float left
+  .links
+    :float right
+    &:after
+      :clear both
+      :display block
+      :content "."
+      :text-indent -9999em
+      :height 0

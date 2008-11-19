@@ -1,0 +1,112 @@
+#about
+  %h1
+    %span What's this?
+
+  %p 
+    Integrity is the angel watching over your shoulder while you code. As soon as you push your commits,
+    it builds, runs your tests, and makes sure everything runs fine.
+  %p 
+    It then 
+    %a{ :href => "/notifiers" } reports the build status 
+    back to your team so everyone's on the same page, and if there's a problem, you can get it fixed right 
+    away.
+  %p.more
+    Read more about
+    = succeed "." do
+      %a{ :href => "http://en.wikipedia.org/wiki/Continuous_integration" } continuous integration
+
+
+#demo
+  %h1
+    %span Live demo
+  
+  %p 
+    See how integrity works for yourself on our own
+    %a{ :href => "http://builder.integrityapp.com" } Integrity
+    install, watching integrity and the various
+    = succeed "." do
+      %a{ :href => "/notifiers" } notifiers
+
+#setup
+  %h1 
+    %span Set up
+  
+  %p
+    %strong It's ridiculously easy. 
+    All you need is to have <tt>ruby</tt> and <tt>rubygems</tt> installed on your server, and then do this:
+  
+  %code.shell
+    %pre
+      :preserve
+        $ gem sources -a http://gems.github.com
+        $ sudo gem install foca-integrity
+        $ integrity install /path/to/my/app
+
+  %p
+    This will create a couple files on your server, mainly <tt>config.yml</tt>, <tt>config.ru</tt> and
+    <tt>thin.yml</tt>.
+  
+  %p 
+    After 
+    %a{ :href => "/configure" } editing those config files 
+    to your needs, just do this:
+  
+  %code.shell
+    %pre
+      :preserve
+        $ sudo gem install thin
+        $ thin -C /path/to/my/app/thin.yml -R /path/to/my/app/config.ru start
+  
+  %p
+    Finally, point your web server (nginx, apache, or whatever you like) to proxy requests made to your
+    integrity domain to the previous configuration. 
+
+  %p
+    For example, the nginx config running behind 
+    %a{ :href => "http://builder.integrityapp.com" } http://builder.integrityapp.com
+    is:
+  
+  %code.nginx
+    %pre
+      :preserve
+        upstream builder-integrityapp-com {
+          server 127.0.0.1:8910;
+          server 127.0.0.1:8911;
+        }
+      
+        server {
+          server_name builder.integrityapp.com;
+          root /var/www/integrity/public;
+          location / {
+            proxy_pass http://builder-integrityapp-com;
+          }
+        }
+  
+  %p 
+    After reloading your webserver's config, you should be gold. Just browse to your
+    new Integrity install and add your first project!
+  
+  %p.more
+    Read about
+    = succeed "." do
+      %a{ :href => "/configure" } configuring integrity
+
+#suport
+  %h1
+    %span Support / Development
+  
+  %p 
+    You can get in touch via irc at
+    %a{ :href => "irc://irc.freenode.net:6667/integrity" } #integrity
+    on freenode.
+  
+  %p
+    If you find a bug, or want to give us a feature request, drop by our
+    %a{ :href => "http://integrity.lighthouseapp.com" } Lighthouse
+    tracker.
+  
+  %p
+    If you want to check out the code, you can do so at our
+    = succeed "." do
+      %a{ :href => "http://github.com/foca/integrity" } GitHub project
+    

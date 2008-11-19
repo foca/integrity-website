@@ -1,0 +1,72 @@
+#notifiers
+  %h1
+    %span Notifiers
+
+  %p
+    After a build is finished, you want to know the status
+    = succeed "." do
+      %strong immidiately
+
+    Integrity gives you a modular notification's system for this.
+  
+  %p
+    With Integrity, you can receive your notifications in a few different ways (don't 
+    worry, all of these are easy to set up):
+  
+  %ul
+    %li
+      %a{ :href => "http://github.com/foca/integrity-email" } Email
+      %cite
+        by
+        %a{ :href => "http://nicolassanguinetti.info" } Nicolás Sanguinetti
+    %li
+      %a{ :href => "http://github.com/ph/integrity-jabber" } Jabber
+      %cite
+        by
+        %a{ :href => "http://heykimo.com/" } Pier-Hugues Pellerin
+    %li
+      %a{ :href => "http://github.com/defunkt/integrity-campfire" } Campfire
+      %cite
+        by
+        %a{ :href => "http://ozmm.org/" } Chris Wanstrath
+    %li
+      %a{ :href => "http://github.com/sr/integrity-irc" } IRC
+      %cite
+        by
+        %a{ :href => "http://atonie.org" } Simon Rozet
+  
+#setup
+  %h1
+    %span Setting up your notifier
+
+  %p
+    Also a piece of cake. For example, for email notifications:
+  
+  %code.shell
+    %pre
+      :preserve
+        $ sudo gem install integrity-email
+  
+  %p
+    And then edit the <code>config.ru</code> file in your integrity install directory:
+  
+  %code.ruby
+    %pre
+      :preserve
+        require "rubygems"
+        require "integrity"
+
+        require "notifiers/email" # you need to add this line
+  
+  %p
+    And then restart integrity. That's it.
+
+#more
+  %h1
+    %span More Notifiers
+  
+  %p
+    If you write a notifier for something else, let us know at
+    %a{ :href => "mailto:info@integrityapp.com" } info@integrityapp.com
+    and we'll add you here :)
+
