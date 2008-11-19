@@ -36,4 +36,11 @@
         %a{ :href => "http://integrity.lighthouseapp.com/projects/14308-integrity" } Bugs / Support
         |
         %a{ :href => "http://github.com/foca/integrity" } Source Code
-    
+    :javascript
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    :javascript
+      try {
+      var pageTracker = _gat._getTracker("UA-6377994-1");
+      pageTracker._trackPageview();
+      } catch(err) {}
