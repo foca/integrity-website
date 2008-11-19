@@ -28,3 +28,49 @@
     Once required there, you need to restart the app, and each notifier can be 
     configured on a per-project basis by browsing to the project and clicking on
     the <em>edit</em> link
+
+#deployment_options
+  %h1
+    %span Deployment options
+  
+  %p
+    Our preferred environment for running integrity is
+    %a{ :href => "http://code.macournoyer.com/thin/" } thin
+    +
+    = succeed "." do
+      %a{ :href => "http://nginx.net/" } nginx
+    
+  %p
+    To this end, integrity ships a <code>thin.yml</code> ready to be used.
+    After doing <code>integrity install /a/b/c</code> you should run:
+  
+  %code.shell
+    %pre 
+      :preserve
+        $ thin -C /a/b/c/thin.yml -R /a/b/c/config.ru start   # to start it
+        $ thin -C /a/b/c/thin.yml -R /a/b/c/config.ru restart # to restart it
+        $ thin -C /a/b/c/thin.yml -R /a/b/c/config.ru stop    # to stop it
+  
+  %p
+    To proxy the web calls to thin we use nginx, with the following configuration:
+    
+  %code.conf
+    %pre
+      :preserve
+        upstream builder-integrityapp-com {
+          server 127.0.0.1:8910;
+          server 127.0.0.1:8911;
+        }
+      
+        server {
+          server_name builder.integrityapp.com;
+          location / {
+            proxy_pass http://builder-integrityapp-com;
+          }
+        }
+  
+  %p
+    If you run Integrity behind apache + thin, or Passenger, or other deployment
+    strategy, drop us a line at
+    %a{ :href => "mailto:info@integrityapp.com" } info@integrityapp.com
+    and let us know what config worked for you so we can include it here :-)
