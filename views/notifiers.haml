@@ -42,8 +42,8 @@
   %p
     Also a piece of cake. For example, for email notifications:
   
-  %code.shell
-    %pre
+  %pre
+    %code.shell<
       :preserve
         $ sudo gem sources -a http://gems.github.com
         $ sudo gem install foca-integrity-email
@@ -51,8 +51,8 @@
   %p
     And then edit the <code>config.ru</code> file in your integrity install directory:
   
-  %code.ruby
-    %pre
+  %pre
+    %code.ruby<
       :preserve
         require "rubygems"
         require "integrity"
