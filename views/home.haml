@@ -40,7 +40,7 @@
       :preserve
         $ gem sources -a http://gems.github.com
         $ sudo gem install foca-integrity
-        $ integrity install /path/to/my/app
+        $ integrity install /path/to/my/integrity/install
 
   %p
     This will create a couple files on your server, mainly <code>config.yml</code>, <code>config.ru</code> and
@@ -55,7 +55,7 @@
     %code.shell<
       :preserve
         $ sudo gem install thin
-        $ thin -C /path/to/my/app/thin.yml -R /path/to/my/app/config.ru start
+        $ thin -C /path/to/my/integrity/install/thin.yml -R /path/to/my/integrity/install/config.ru start
   
   %p
     Finally, point your web server (nginx, apache, or whatever you like) to proxy requests made to your
