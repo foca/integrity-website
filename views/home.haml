@@ -2,7 +2,7 @@
   %h1
     %span What's this?
 
-  %p 
+  %p
     Integrity is the angel watching over your shoulder while you code. As soon as you push your commits,
     it builds, runs your tests, and makes sure everything runs fine.
   %p
@@ -19,22 +19,22 @@
 #demo
   %h1
     %span Live demo
-  
-  %p 
-    See how integrity works for yourself on our own
-    %a{ :href => "http://builder.integrityapp.com" } Integrity
-    install, watching integrity and the various
+
+  %p
+    See how integrity works for yourself on
+    %a{ :href => "http://builder.integrityapp.com" } our own install,
+    watching integrity and the various
     = succeed "." do
       %a{ :href => "/notifiers" } notifiers
 
 #setup
-  %h1 
+  %h1
     %span Set up
-  
+
   %p
-    %strong It's ridiculously easy. 
+    %strong It's ridiculously easy.
     All you need is to have <code>ruby</code> and <code>rubygems</code> installed on your server, and then do this:
-  
+
   %pre
     %code.shell<
       :preserve
@@ -45,12 +45,12 @@
   %p
     This will create a couple files on your server, mainly <code>config.yml</code>, <code>config.ru</code> and
     <code>thin.yml</code>.
-  
-  %p 
-    After 
-    %a{ :href => "/configure" } editing those config files 
+
+  %p
+    After
+    %a{ :href => "/configure" } editing those config files
     to your needs, just do this:
-  
+
   %pre
     %code.shell<
       :preserve
@@ -60,12 +60,12 @@
 
   %p
     Finally, point your web server (nginx, apache, or whatever you like) to proxy requests made to your
-    integrity domain to the previous configuration. 
+    integrity domain to the previous configuration.
 
-  %p 
+  %p
     After reloading your webserver's config, you should be gold. Just browse to your
     new Integrity install and add your first project!
-  
+
   %p.more
     Read about
     = succeed "." do
@@ -73,41 +73,41 @@
 
 #itworks
   %h1
-    %span 
+    %span
       But does it work with
       = surround "<", ">?" do
         %em insert tech here
-  
+
   %p
     Short answer:
     %strong Yeah!
-  
+
   %p
-    Slightly longer answer: as long as your build process can be run from an unix-y 
+    Slightly longer answer: as long as your build process can be run from an unix-y
     environment <strong>and</strong> it returns a <em>zero</em> status code for
     success and <em>non-zero</em> for failure, then integrity works for you.
 
 #suport
   %h1
     %span Support / Development
-  
-  %p 
+
+  %p
     You can get in touch via irc at
     %a{ :href => "irc://irc.freenode.net:6667/integrity" } #integrity
     on freenode.
 
-  %p 
+  %p
     If no one happens to be around the IRC channel, you can ask in our
     = succeed "." do
       %a{ :href => "http://groups.google.com/group/integrityapp" } Google Group
-  
+
   %p
     If you find a bug, or want to give us a feature request, drop by our
     %a{ :href => "http://integrity.lighthouseapp.com" } Lighthouse
     tracker.
-  
+
   %p
     If you want to check out the code, you can do so at our
     = succeed "." do
       %a{ :href => "http://github.com/foca/integrity" } GitHub project
-    
+
