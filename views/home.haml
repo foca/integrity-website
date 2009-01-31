@@ -71,8 +71,10 @@
     = succeed "." do
       %a{ :href => "/configure" } configuring integrity
 
-#itworks
+#faq
   %h1
+    %span FAQ
+  %h2
     %span
       But does it work with
       = surround "<", ">?" do
@@ -86,6 +88,14 @@
     Slightly longer answer: as long as your build process can be run from an unix-y
     environment <strong>and</strong> it returns a <em>zero</em> status code for
     success and <em>non-zero</em> for failure, then integrity works for you.
+
+  %h2
+    %span
+      How to use Integrity with a local repository?
+
+  %p
+    Set the project URI's to point to the </code>.git</code> directory of the
+    repository: <code>/home/sr/code/integrity/.git</code>
 
 #suport
   %h1
