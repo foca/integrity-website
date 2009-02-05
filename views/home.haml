@@ -97,6 +97,16 @@
     Set the project URI's to point to the </code>.git</code> directory of the
     repository: <code>/home/sr/code/integrity/.git</code>
 
+  %h2
+    %span
+      How do I use
+      %a{ :href => "http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html" } git submodules
+      with Integrity?
+
+  %p
+    Use this as your build command: <code>git submodules update --init && rake test</code>
+    It'll fetch and update the submodules everytime the project is build.
+
 #suport
   %h1
     %span Support / Development
