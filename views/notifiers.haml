@@ -8,11 +8,11 @@
       %strong immediately
 
     Integrity gives you a modular notification's system for this.
-  
+
   %p
-    With Integrity, you can receive your notifications in a few different ways (don't 
+    With Integrity, you can receive your notifications in a few different ways (don't
     worry, all of these are easy to set up):
-  
+
   %ul
     %li
       %a{ :href => "http://github.com/foca/integrity-email" } Email
@@ -51,16 +51,16 @@
 
   %p
     Also a piece of cake. For example, for email notifications:
-  
+
   %pre
     %code.shell<
       :preserve
         $ sudo gem sources -a http://gems.github.com
         $ sudo gem install foca-integrity-email
-  
+
   %p
     And then edit the <code>config.ru</code> file in your integrity install directory:
-  
+
   %pre
     %code.ruby<
       :preserve
@@ -68,16 +68,16 @@
         require "integrity"
 
         require "notifiers/email" # you need to add this line
-  
+
   %p
-    And then restart integrity. That's it. Now you can browse to 
+    And then restart integrity. That's it. Now you can browse to
     <code>http://integrity.mydomain.com/projects/my_project/edit</code> and configure
     your notifier.
 
 #more
   %h1
     %span More Notifiers
-  
+
   %p
     If you write a notifier for something else, let us know at
     %a{ :href => "mailto:info@integrityapp.com" } info@integrityapp.com
