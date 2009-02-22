@@ -14,6 +14,6 @@ get "/configure" do
 end
 
 get "/integrity.css" do
-  header "Content-Type" => "text/css; charset=utf-8"
+  response["Content-Type"] = "text/css; charset=utf-8"
   sass :integrity
 end

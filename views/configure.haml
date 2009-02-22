@@ -51,8 +51,12 @@
         $ thin -C /a/b/c/thin.yml -R /a/b/c/config.ru restart # to restart it
         $ thin -C /a/b/c/thin.yml -R /a/b/c/config.ru stop    # to stop it
   
+  %h2 Proxy through nginx
+  
   %p
-    To proxy the web calls to thin we use nginx, with the following configuration:
+    Here's the configuration used for
+    = succeed ":" do
+      %a{ :href => "http://builder.integrityapp.com" } builder.integrityapp.com
     
   %pre
     %code.conf<
@@ -68,7 +72,35 @@
             proxy_pass http://builder-integrityapp-com;
           }
         }
+
+  %h2 Proxy through apache
+
+  %p
+    Sample configuration for Apache acting as reverse proxy to a cluster of thin 
+    instances:
   
+  %pre
+    %code.conf<
+      :preserve
+        &lt;VirtualHost *&gt;
+          &lt;Proxy *&gt;
+            Order deny,allow
+            Allow from all
+          &lt;/Proxy&gt;
+        
+          RedirectMatch ^/integrity$ /integrity/
+          ProxyRequests Off
+          ProxyPass /integrity/ http://localhost:8910/
+          ProxyHTMLURLMap http://localhost:8910 /integrity
+          
+          &lt;Location /integrity&gt;
+            ProxyPassReverse /
+            SetOutputFilter proxy-html
+            ProxyHTMLURLMap / /integrity/
+            ProxyHTMLURLMap /integrity/ /integrity
+          &lt;/Location&gt;
+        &lt;/VirtualHost&gt;
+
   %p
     If you run Integrity behind apache + thin, or Passenger, or other deployment
     strategy, drop us a line at
