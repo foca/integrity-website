@@ -3,27 +3,27 @@
 
 /** RUBY / JAVASCRIPT **/
 #content code span.comment {
-	color: #BD48B3;
+ color: #BD48B3;
 }
 
 #content code span.string {
-	color: #99FF00;
+ color: #99FF00;
 }
 
 #content code span.brackets {
-	
+
 }
 
 #content code span.symbol {
-	color: #6BCFF7;
+ color: #6BCFF7;
 }
 
 #content code span.keywords {
-	color: #FF8400;
+ color: #FF8400;
 }
 
 #content code span.erb {
-	background: #333;
+ background: #333;
 }
 
 #content code span.symbol {
@@ -32,34 +32,34 @@
 
 /** HTML **/
 code.html span.tag {
-	color: #fff;
+ color: #fff;
 }
 
 code.html span.attribute {
-	color: #FFD500;
+ color: #FFD500;
 }
 
 code.html span.string {
-	color: #99FF00;
+ color: #99FF00;
 }
 
 code.html span.comment {
-	color: #999;
+ color: #999;
 }
 
 code.html span.doctype {
-	color: #D7FF80;
+ color: #D7FF80;
 }
 
 /** SHELL **/
 code.shell span.comment {
-	color: #BD48B3;
+ color: #BD48B3;
 }
 
 code.shell span.string, code.shell span.path {
-	color: #99FF00;
+ color: #99FF00;
 }
 
 code.shell span.prompt {
-	color: #FF8400;
+ color: #FF8400;
 }
