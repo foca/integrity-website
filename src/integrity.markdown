@@ -200,16 +200,16 @@ If you find a bug, or want to give us a feature request, drop by our
 
 If you want to check out the code, you can do so at our [GitHub project][src]
 
-[foca]: http://nicolassanguinetti.info
-[sr]: http://atonie.org
-[ci]: http://en.wikipedia.org/wiki/Continuous_Integration
+[configure]: /#configure
 [notifiers]: /#notifiers
+[demo]: http://builder.integrityapp.com
 [src]: http://github.com/foca/integrity
-[ml]: http://groups.google.com/group/integrityapp
 [lighthouse]: http://integrity.lighthouseapp.com
-[nginx]: http://nginx.net
+[ml]: http://groups.google.com/group/integrityapp
+[configsrc]: http://github.com/foca/integrity/blob/3d1ba4b8cde7241dacd641eb40e9f26c49fbea35/config/config.sample.yml
 [Thin]: http://code.macournoyer.com/thin
 [Passenger]: http://www.modrails.com/
-[demo]: http://builder.integrityapp.com
-[configure]: /#configure
-[configsrc]: http://github.com/foca/integrity/blob/3d1ba4b8cde7241dacd641eb40e9f26c49fbea35/config/config.sample.yml
+[nginx]: http://nginx.net
+[ci]: http://en.wikipedia.org/wiki/Continuous_Integration
+[foca]: http://nicolassanguinetti.info
+[sr]: http://atonie.org
