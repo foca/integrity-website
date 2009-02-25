@@ -96,6 +96,28 @@ To proxy the web calls to thin we use nginx, with the following configuration:
       }
     }
 
+Sample configuration for Apache acting as reverse proxy to a cluster of thin
+instances:
+
+    <VirtualHost *>
+      <Proxy>
+        Order deny,allow
+        Allow from all
+      </Proxy>
+
+      RedirectMatch ^/integrity$ /integrity/
+      ProxyRequests Off
+      ProxyPass /integrity/ http://localhost:8910/
+      ProxyHTMLURLMap http://localhost:8910 /integrity
+
+      <Location /integrity>
+        ProxyPassReverse /
+        SetOutputFilter proxy-html
+        ProxyHTMLURLMap / /integrity/
+        ProxyHTMLURLMap /integrity/ /integrity
+      </Location>
+    </VirtualHost>
+
 If you run Integrity behind apache + thin, or Passenger, or other deployment
 strategy, drop us a line at <info@integrityapp.com> and let us know what
 config worked for you so we can include it here :-)
