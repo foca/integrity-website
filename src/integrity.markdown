@@ -182,11 +182,36 @@ repository: `/home/sr/code/integrity/.git`
 
 [git-sub]: http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html
 
-How do I use [git submodules][git-sub] with Integrity {#git-sub}
------------------------------------------------------
+How do I use [git submodules][git-sub] with Integrity? {#git-sub}
+------------------------------------------------------
 
 Use this as your build command: `git submodules update --init && rake test`
 It'll fetch and update the submodules everytime the project is build.
+
+How to handle database.yml? {#database-yml}
+---------------------------
+__Integrity is dumb__. it takes a repository URL and a command to run in a
+working copy of the former.
+It then reports success or failure depending on [exit status][exit] of the
+command.
+
+While this is very simplistic, it allows for great flexibility: you can use
+whatever you want as the build command.
+
+So, to handle `database.yml`, you can either use a build command like this:
+
+    cp config/database.sample.yml config/database.yml && rake test
+
+Or use a Rake task. Example:
+
+    namespace :test do
+      task :write_test_db_config do
+        file = File.join(Rails.root, "config", "database.yml")
+        File.open(file), "w") { |config|
+          config << "...."
+        }
+      end
+    end
 
 Suport / Development {#support}
 ====================
@@ -211,5 +236,6 @@ If you want to check out the code, you can do so at our [GitHub project][src]
 [Passenger]: http://www.modrails.com/
 [nginx]: http://nginx.net
 [ci]: http://en.wikipedia.org/wiki/Continuous_Integration
+[exit]: http://en.wikipedia.org/wiki/Exit_status#Unix
 [foca]: http://nicolassanguinetti.info
 [sr]: http://atonie.org
