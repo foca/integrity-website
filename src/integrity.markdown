@@ -56,15 +56,17 @@ Configure a web proxy {#proxy}
 
 ### nginx {#nginx}
 
-    upstream builder-integrityapp-com {
-      server 127.0.0.1:8910;
-      server 127.0.0.1:8911;
-    }
+    http {
+      upstream builder-integrityapp-com {
+        server 127.0.0.1:8910;
+        server 127.0.0.1:8911;
+      }
 
-    server {
-      server_name builder.integrityapp.com;
-      location / {
-        proxy_pass http://builder-integrityapp-com;
+      server {
+        server_name builder.integrityapp.com;
+        location / {
+          proxy_pass http://builder-integrityapp-com;
+        }
       }
     }
 
