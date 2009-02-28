@@ -215,6 +215,13 @@ Or use a Rake task. Example:
       end
     end
 
+How do I use [metric fu](http://metric-fu.rubyforge.org) ? {#metricfu}
+----------------------------------------------------------
+
+Basically, it's same as for [database.yml](/#database-yml). See our
+[Rakefile](http://github.com/foca/integrity/blob/0.1.9/Rakefile#L16)
+for an example.
+
 Suport / Development {#support}
 ====================
 
