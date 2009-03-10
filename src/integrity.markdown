@@ -6,7 +6,7 @@ What's this? {#about}
 
 Integrity is the angel watching over your shoulder while you code. As soon
 as you push your commits, it builds, runs your tests, and makes sure
-everything runs fine.
+everything works fine.
 
 It then reports the build status using [various notifiers][notifiers]
 back to your team so everyone's on the same page, and if there's a problem,
@@ -91,9 +91,9 @@ Configure a web proxy {#proxy}
       </Location>
     </VirtualHost>
 
-If you run Integrity behind Apache + Thin, or Passenger, or other deployment
-strategy, drop us a line at <info@integrityapp.com> and let us know what
-config worked for you so we can include it here :-)
+If you run Integrity behind Passenger, or other deployment strategy, drop 
+us a line at <info@integrityapp.com> and let us know what config worked 
+for you so we can include it here :-)
 
 Configuration {#configure}
 =============
@@ -143,7 +143,7 @@ And then edit the `config.ru` file in your Integrity install directory:
 
     require "notifier/email" # you need to add this line
 
-And then restart Integrity. That's it. Now you can browse to
+Finally, restart Integrity. That's it. Now you can browse to
 <http://integrity.example.org/my-project/edit> and configure your notifier.
 
 More Notifiers
@@ -190,8 +190,8 @@ How do I use [git submodules][git-sub] with Integrity? {#git-sub}
 Use this as your build command: `git submodules update --init && rake test`
 It'll fetch and update the submodules everytime the project is build.
 
-How to handle database.yml? {#database-yml}
----------------------------
+How to handle database.yml and similar unversioned files? {#database-yml}
+---------------------------------------------------------
 __Integrity is dumb__. it takes a repository URL and a command to run in a
 working copy of the former.
 It then reports success or failure depending on [exit status][exit] of the
