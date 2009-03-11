@@ -91,8 +91,8 @@ Configure a web proxy {#proxy}
       </Location>
     </VirtualHost>
 
-If you run Integrity behind Passenger, or other deployment strategy, drop 
-us a line at <info@integrityapp.com> and let us know what config worked 
+If you run Integrity behind Passenger, or other deployment strategy, drop
+us a line at <info@integrityapp.com> and let us know what config worked
 for you so we can include it here :-)
 
 Configuration {#configure}
