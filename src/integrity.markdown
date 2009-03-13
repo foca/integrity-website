@@ -194,7 +194,7 @@ How to handle database.yml and similar unversioned files? {#database-yml}
 ---------------------------------------------------------
 __Integrity is dumb__. it takes a repository URL and a command to run in a
 working copy of the former.
-It then reports success or failure depending on [exit status][exit] of the
+It then reports success or failure depending on the [exit status][exit] of the
 command.
 
 While this is very simplistic, it allows for great flexibility: you can use
@@ -218,7 +218,7 @@ Or use a Rake task. Example:
 How do I use [metric fu](http://metric-fu.rubyforge.org) ? {#metricfu}
 ----------------------------------------------------------
 
-Basically, it's same as for [database.yml](/#database-yml). See our
+Basically, it's the same as for [database.yml](/#database-yml). See our
 [Rakefile](http://github.com/foca/integrity/blob/0.1.9/Rakefile#L16)
 for an example.
 
