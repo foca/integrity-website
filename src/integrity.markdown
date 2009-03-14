@@ -126,6 +126,8 @@ Don't worry, all of these are easy to set up:
   by [Chris Saylor](http://justhack.com)
 - [Basecamp](http://github.com/pyrat/integrity-basecamp), by
   [Alastair Brunton](http://www.simplyexcited.co.uk)
+- [Yammer](http://github.com/jstewart/integrity-yammer/tree), by
+  [Jason Stewart](http://github.com/jstewart)
 
 
 Setting up your notifier {#setup-notifier}
