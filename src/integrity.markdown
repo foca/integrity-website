@@ -119,7 +119,7 @@ Don't worry, all of these are easy to set up:
   by [Nicolás Sanguinetti][foca]
 - [Jabber](http://github.com/ph/integrity-jabber),
   by [Pier-Hugues Pellerin](http://heykimo.com)
-- [Campfire](http://github.com/defunkt/campfire),
+- [Campfire](http://github.com/defunkt/integrity-campfire),
   by [Chris Wanstrath](http://ozmm.org)
 - [IRC](http://github.com/sr/integrity-irc), by [Simon Rozet][sr]
 - [Twitter](http://github.com/cwsaylor/integrity-twitter),
