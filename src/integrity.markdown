@@ -193,8 +193,8 @@ repository: `/home/sr/code/integrity/.git`
 
 [git-sub]: http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html
 
-How do I use [git submodules][git-sub] with Integrity? {#git-sub}
-------------------------------------------------------
+How do I use git submodules with Integrity? {#git-sub}
+-------------------------------------------
 
 Use this as your build command: `git submodules update --init && rake test`
 It'll fetch and update the submodules everytime the project is build.
@@ -224,8 +224,8 @@ Or use a Rake task. Example:
       end
     end
 
-How do I use [metric fu](http://metric-fu.rubyforge.org) ? {#metricfu}
-----------------------------------------------------------
+How do I use metric\_fu ? {#metricfu}
+------------------------
 
 Basically, it's the same as for [database.yml](/#database-yml). See our
 [Rakefile](http://github.com/foca/integrity/blob/0.1.9/Rakefile#L16)
