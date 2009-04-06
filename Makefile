@@ -1,4 +1,4 @@
-all: index.html stylesheets/integrity.css
+all: clean index.html stylesheets/integrity.css
 index.html: src/integrity.markdown
 	./src/htmlize src/integrity.markdown > index.html
 stylesheets/integrity.css: src/integrity.sass
