@@ -163,6 +163,16 @@ And then edit the `config.ru` file in your Integrity install directory:
 Finally, restart Integrity. That's it. Now you can browse to
 <http://ci.example.org/my-project/edit> and configure your notifier.
 
+**NOTE:** Due to recent changes in Integrity's internals, notifiers now needs
+to be registered. However, all notifiers haven't been updated yet,
+so you might have to do it yourself into the `config.ru` file:
+
+    require "rubygems"
+    require "integrity"
+    require "integrity/notifier/email"
+
+    Integrity::Notifier.register(Integrity::Notifier::Email)
+
 FAQ {#faq}
 ===
 
