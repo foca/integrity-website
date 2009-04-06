@@ -122,7 +122,7 @@ you can see the [source file on GitHub][configsrc].
 Notifiers
 =========
 
-After a build is finished, you want to know the status __immediately__.
+After a build is finished, you want to know the status __immediately.__
 Integrity gives you a modular notification's system for this.
 
 With Integrity, you can receive your notifications in a few different ways.
@@ -142,6 +142,8 @@ Don't worry, all of these are easy to set up:
 - [Yammer](http://github.com/jstewart/integrity-yammer/tree), by
   [Jason Stewart](http://github.com/jstewart)
 
+**NOTE:** If you wrote a notifier for something else, let us know at
+<info@integrityapp.com> and we'll add you here :)
 
 Setting up your notifier {#setup-notifier}
 ------------------------
@@ -159,25 +161,7 @@ And then edit the `config.ru` file in your Integrity install directory:
     require "notifier/email" # you need to add this line
 
 Finally, restart Integrity. That's it. Now you can browse to
-<http://integrity.example.org/my-project/edit> and configure your notifier.
-
-More Notifiers
---------------
-
-If you wrote a notifier for something else, let us know at
-<info@integrityapp.com> and we'll add you here :)
-
-
-Configure the Notifiers {#notifiers}
------------------------
-
-As explained on [the notifiers page][notifiers] all you need to do to get them
-working after installing them is require them in the `config.ru` file generated
-by the installer.
-
-Once required there, you need to restart the app, and each notifier can be
-configured on a per-project basis by browsing to the project and clicking on
-the *edit* link
+<http://ci.example.org/my-project/edit> and configure your notifier.
 
 FAQ {#faq}
 ===
