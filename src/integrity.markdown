@@ -150,15 +150,15 @@ Setting up your notifier {#setup-notifier}
 
 Also a piece of cake. For example, for email notifications:
 
-    $ gem sources -a http://gems.github.com
-    $ gem install foca-integrity-email
+    $ gem install integrity-email
 
 And then edit the `config.ru` file in your Integrity install directory:
 
     require "rubygems"
     require "integrity"
 
-    require "notifier/email" # you need to add this line
+    # You need to add the following line:
+    require "integrity/notifier/email"
 
 Finally, restart Integrity. That's it. Now you can browse to
 <http://ci.example.org/my-project/edit> and configure your notifier.
