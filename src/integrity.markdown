@@ -248,7 +248,7 @@ If you want to check out the code, you can do so at our [GitHub project][src]
 [demo]: http://builder.integrityapp.com
 [src]: http://github.com/foca/integrity
 [lighthouse]: http://integrity.lighthouseapp.com
-[ml]: integrity@librelist.com
+[ml]: mailto:integrity@librelist.com
 [configsrc]: http://github.com/foca/integrity/blob/3d1ba4b8cde7241dacd641eb40e9f26c49fbea35/config/config.sample.yml
 [Thin]: http://code.macournoyer.com/thin
 [Passenger]: http://www.modrails.com/
