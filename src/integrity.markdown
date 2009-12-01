@@ -236,7 +236,7 @@ Suport / Development {#support}
 
 [#integrity]: irc://irc.freenode.net:6667/integrity
 You can get in touch via IRC at [#integrity][] on freenode. If no one happens
-to be around the IRC channel, you can ask in our [Google Group][ml].
+to be around the IRC channel, you can ask in our [mailing list][ml].
 
 If you find a bug, or want to give us a feature request, drop by our
 [Lighthouse][] tracker.
@@ -248,7 +248,7 @@ If you want to check out the code, you can do so at our [GitHub project][src]
 [demo]: http://builder.integrityapp.com
 [src]: http://github.com/foca/integrity
 [lighthouse]: http://integrity.lighthouseapp.com
-[ml]: http://groups.google.com/group/integrityapp
+[ml]: integrity@librelist.com
 [configsrc]: http://github.com/foca/integrity/blob/3d1ba4b8cde7241dacd641eb40e9f26c49fbea35/config/config.sample.yml
 [Thin]: http://code.macournoyer.com/thin
 [Passenger]: http://www.modrails.com/
